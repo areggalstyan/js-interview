@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/css';
-import more from './icons/more.svg';
-import add from './icons/add.svg';
+import more from '../../images/more.svg';
+import add from '../../images/add.svg';
 import Icon from '../Icon';
 import MessageCounter from './MessageCounter';
 
@@ -13,7 +13,7 @@ function TopBar() {
       padding: 24px;
       display: flex;
     `}>
-      <h2 className={css`
+      <h3 className={css`
         font-weight: 600;
         font-size: 20px;
         line-height: 30px;
@@ -21,16 +21,12 @@ function TopBar() {
         align-items: center;
       `}>
         Messages
-        <button className={css`
-          margin-left: 6px;
-        `}>
-          <img src={more} alt='More' />
-        </button>
+        <span className={css`margin-left: 6px;`}>
+          <Icon size={16} src={more} alt='More' />
+        </span>
         <MessageCounter />
-      </h2>
-      <div className={css`
-        margin-left: auto;
-      `}>
+      </h3>
+      <div className={css`margin-left: auto;`}>
         <Icon size={40} src={add} alt='Add' />
       </div>
     </div>

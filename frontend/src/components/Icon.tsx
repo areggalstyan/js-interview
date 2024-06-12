@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import { css } from '@emotion/css';
 
-function Icon({ size, src, alt }: { size: number, src: string, alt: string }) {
+export type IconProps = {
+  size: number,
+  src: string,
+  alt: string,
+  onClick?: MouseEventHandler<HTMLButtonElement>
+};
+
+function Icon({ size, src, alt, onClick }: IconProps) {
   return (
     <button className={css`
       width: ${size}px;
@@ -9,7 +16,7 @@ function Icon({ size, src, alt }: { size: number, src: string, alt: string }) {
       display: flex;
       justify-content: center;
       align-items: center;
-    `}>
+    `} onClick={onClick}>
       <img src={src} alt={alt} />
     </button>
   );
