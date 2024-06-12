@@ -3,10 +3,12 @@ import { css } from '@emotion/css';
 import { Conversation } from '../../conversation';
 import profile from '../../images/profile.svg';
 import { useAppDispatch } from '../../state/hooks';
+import { useTranslation } from 'react-i18next';
 
 function Contact({ conversation }: { conversation: Conversation }) {
   const dispatch = useAppDispatch();
   const lastMessage = conversation.messages[conversation.messages.length - 1];
+  const { t } = useTranslation();
 
   return (
     <div className={css`
@@ -37,7 +39,7 @@ function Contact({ conversation }: { conversation: Conversation }) {
             line-height: 21px;
             margin-left: auto;
             color: rgba(0, 0, 0, 0.3);
-          `}>{new Date(Date.now() - lastMessage.dateAdded).getMinutes()}m</span>
+          `}>{new Date(Date.now() - lastMessage.dateAdded).getMinutes()}{t('m')}</span>
         </div>
         <p className={css`
           font-weight: 600;

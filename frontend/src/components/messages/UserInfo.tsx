@@ -2,8 +2,11 @@ import React from 'react';
 import { css } from '@emotion/css';
 import profile from '../../images/profile.svg';
 import OnlineDot from './OnlineDot';
+import { useTranslation } from 'react-i18next';
 
 function UserInfo({ name }: { name: string }) {
+  const { t } = useTranslation();
+
   return (
     <div className={css`
       display: flex;
@@ -33,7 +36,7 @@ function UserInfo({ name }: { name: string }) {
             line-height: 18px;
             color: rgba(0, 0, 0, 0.6);
           `}>
-            Online
+            {t('online')}
           </span>
         </div>
       </div>

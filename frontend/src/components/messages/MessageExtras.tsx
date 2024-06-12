@@ -2,8 +2,11 @@ import React from 'react';
 import { css } from '@emotion/css';
 import { Message } from '../../conversation';
 import MessageActions from './MessageActions';
+import { useTranslation } from 'react-i18next';
 
 function MessageExtras({ message, isMine }: { message: Message, isMine: boolean }) {
+  const { t } = useTranslation();
+
   return (
     <span className={css`
       font-weight: 600;
@@ -13,8 +16,8 @@ function MessageExtras({ message, isMine }: { message: Message, isMine: boolean 
       color: ${isMine ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.4)'};
       float: right;
     `}>
-      Added {new Date(message.dateAdded).toISOString()}<br />
-      Edited {new Date(message.dateEdited).toISOString()}<br />
+      {t('added')} {new Date(message.dateAdded).toISOString()}<br />
+      {t('edited')} {new Date(message.dateEdited).toISOString()}<br />
       {isMine ? <MessageActions message={message} /> : ''}
     </span>
   );

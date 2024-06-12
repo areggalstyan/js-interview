@@ -6,9 +6,11 @@ import Messages from './components/messages/Messages';
 import Directory from './components/directory/Directory';
 import Icon from './components/Icon';
 import bars from './images/expand.svg';
+import { useTranslation } from 'react-i18next';
 
 function App() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <div className={css`
@@ -41,11 +43,11 @@ function App() {
         left: 20px;
         z-index: 999;
 
-        @media (min-width: 1024px) {
+        @media (min-width: 1025px) {
           display: none;
         }
       `}>
-        <Icon size={48} src={bars} alt='Expand' onClick={() => setIsSidebarVisible(!isSidebarVisible)} />
+        <Icon size={48} src={bars} alt={t('expand')} onClick={() => setIsSidebarVisible(!isSidebarVisible)} />
       </div>
       <Messages />
       <div className={css`

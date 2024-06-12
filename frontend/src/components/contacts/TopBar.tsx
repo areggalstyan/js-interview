@@ -4,8 +4,11 @@ import more from '../../images/more.svg';
 import add from '../../images/add.svg';
 import Icon from '../Icon';
 import MessageCounter from './MessageCounter';
+import { useTranslation } from 'react-i18next';
 
 function TopBar() {
+  const { t } = useTranslation();
+
   return (
     <div className={css`
       height: 89px;
@@ -20,14 +23,14 @@ function TopBar() {
         display: flex;
         align-items: center;
       `}>
-        Messages
+        {t('messages')}
         <span className={css`margin-left: 6px;`}>
-          <Icon size={16} src={more} alt='More' />
+          <Icon size={16} src={more} alt={t('more')} />
         </span>
         <MessageCounter />
       </h3>
       <div className={css`margin-left: auto;`}>
-        <Icon size={40} src={add} alt='Add' />
+        <Icon size={40} src={add} alt={t('add')} />
       </div>
     </div>
   );

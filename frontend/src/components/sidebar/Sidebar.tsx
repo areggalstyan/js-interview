@@ -8,8 +8,17 @@ import calendar from '../../images/calendar.svg';
 import settings from '../../images/settings.svg';
 import Logo from './Logo';
 import Icon from '../Icon';
+import { useTranslation } from 'react-i18next';
 
 function Sidebar() {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = async () => {
+    const newLng = localStorage.getItem('lng') === 'en' ? 'hy' : 'en';
+    localStorage.setItem('lng', newLng);
+    await i18n.changeLanguage(newLng);
+  }
+
   return (
     <div className={css`
       width: 88px;
@@ -28,13 +37,13 @@ function Sidebar() {
         flex-grow: 1;
         gap: 32px;
       `}>
-        <Icon size={24} src={home} alt='Home' />
-        <Icon size={24} src={messages} alt='Messages' />
-        <Icon size={24} src={audio} alt='Audio' />
-        <Icon size={24} src={search} alt='Search' />
-        <Icon size={24} src={calendar} alt='Calendar' />
+        <Icon size={24} src={home} alt={t('home')} />
+        <Icon size={24} src={messages} alt={t('messages')} />
+        <Icon size={24} src={audio} alt={t('audio')} />
+        <Icon size={24} src={search} alt={t('search')} />
+        <Icon size={24} src={calendar} alt={t('calendar')} />
         <div className={css`margin-top: auto;`}>
-          <Icon size={24} src={settings} alt='Settings' />
+          <Icon size={24} src={settings} alt={t('settings')} onClick={changeLanguage} />
         </div>
       </div>
     </div>

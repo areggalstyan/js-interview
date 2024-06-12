@@ -1,16 +1,18 @@
 import React from 'react';
 import { css } from '@emotion/css';
 import { useAppDispatch } from '../../state/hooks';
+import { useTranslation } from 'react-i18next';
 
 function SearchBar() {
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
 
   return (
     <div className={css`
       height: 72px;
       padding: 12px 24px;
     `}>
-      <input type='text' placeholder='Search messages' className={css`
+      <input type='text' placeholder={t('searchMessages')} className={css`
         height: 100%;
         width: 100%;
         padding: 10px 20px;

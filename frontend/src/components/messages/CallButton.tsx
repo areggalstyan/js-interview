@@ -1,11 +1,13 @@
 import { css } from '@emotion/css';
 import React from 'react';
 import call from '../../images/call.svg';
+import { useTranslation } from 'react-i18next';
 
 function CallButton() {
+  const { t } = useTranslation();
+
   return (
     <button className={css`
-      width: 94px;
       height: 44px;
       border-radius: 8px;
       padding: 10px 16px;
@@ -29,7 +31,7 @@ function CallButton() {
         `}>
           <img src={call} alt='' />
         </span>
-      Call
+      {t('call')}
     </button>
   );
 }

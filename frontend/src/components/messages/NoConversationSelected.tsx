@@ -1,7 +1,10 @@
 import React from 'react';
 import { css } from '@emotion/css';
+import { useTranslation } from 'react-i18next';
 
 function NoConversationSelected() {
+  const { t } = useTranslation();
+
   return (
     <div className={css`
       display: flex;
@@ -16,7 +19,7 @@ function NoConversationSelected() {
         align-items: center;
         color: rgba(0, 0, 0, 0.4);
       `}>
-        Select a conversation
+        {t('selectAConversation')}
       </span>
     </div>
   );

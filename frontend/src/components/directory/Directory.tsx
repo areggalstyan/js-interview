@@ -3,8 +3,11 @@ import { css } from '@emotion/css';
 import Category from './Category';
 import profile from '../../images/profile.svg';
 import file from '../../images/file.svg';
+import { useTranslation } from 'react-i18next';
 
 function Directory() {
+  const { t } = useTranslation();
+
   return (
     <div className={css`
       height: 100%;
@@ -24,20 +27,20 @@ function Directory() {
           font-size: 20px;
           line-height: 30px;
         `}>
-          Directory
+          {t('directory')}
         </h3>
       </div>
       <div className={css`
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
       `}>
-        <Category name='Team Members' count={4} items={[
-          { name: 'John Doe', description: 'Profession', image: profile },
-          { name: 'John Doe', description: 'Profession', image: profile },
-          { name: 'John Doe', description: 'Profession', image: profile },
-          { name: 'John Doe', description: 'Profession', image: profile }
+        <Category name={t('teamMembers')} count={4} items={[
+          { name: 'John Doe', description: t('profession'), image: profile },
+          { name: 'John Doe', description: t('profession'), image: profile },
+          { name: 'John Doe', description: t('profession'), image: profile },
+          { name: 'John Doe', description: t('profession'), image: profile }
         ]} />
       </div>
-      <Category name='Files' count={3} items={[
+      <Category name={t('files')} count={3} items={[
         { name: 'example.pdf', description: 'PDF 10mb', image: file },
         { name: 'example.pdf', description: 'PDF 10mb', image: file },
         { name: 'example.pdf', description: 'PDF 10mb', image: file }

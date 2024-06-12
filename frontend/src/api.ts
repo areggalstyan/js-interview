@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Conversation, getCurrentName, toConversations } from './conversation';
 import { v4 as uuidv4 } from 'uuid';
+import i18n from './i18n';
 
 export const getConversations: () => Promise<Conversation[]> = async () => {
   try {
@@ -10,7 +11,7 @@ export const getConversations: () => Promise<Conversation[]> = async () => {
       }
     })).data);
   } catch {
-    alert('An error occurred while trying to load the conversations');
+    alert(i18n.t('getConversationsError'));
     return [];
   }
 };
@@ -28,7 +29,7 @@ export const addMessage: (text: string) => Promise<void> = async text => {
       }
     });
   } catch {
-    alert('An error occurred while trying to send the message');
+    alert(i18n.t('addMessageError'));
   }
 };
 
@@ -40,7 +41,7 @@ export const removeMessage: (id: string) => Promise<void> = async id => {
       }
     });
   } catch {
-    alert('An error occurred while trying to delete the message');
+    alert(i18n.t('removeMessageError'));
   }
 };
 
@@ -52,6 +53,6 @@ export const editMessage: (id: string, name: string, text: string) => Promise<vo
       }
     });
   } catch {
-    alert('An error occurred while trying to edit the message')
+    alert(i18n.t('editMessageError'))
   }
 };
