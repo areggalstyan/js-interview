@@ -2,6 +2,8 @@
 
 Website updates messages every second.
 
+The search bar filters conversations where at least one message contains the search text.
+
 A user's name is chosen randomly and stored in browser's localStorage.
 
 Due to the fact that the comments only contain the sender name, when you send a messages, it
