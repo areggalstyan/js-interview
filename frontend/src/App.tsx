@@ -8,8 +8,14 @@ import Icon from './components/Icon';
 import bars from './images/expand.svg';
 import { useTranslation } from 'react-i18next';
 
+enum Expansion {
+  Sidebar,
+  Contacts,
+  None
+}
+
 function App() {
-  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const [expansion, setExpansion] = useState(Expansion.None);
   const { t } = useTranslation();
 
   return (
@@ -20,14 +26,14 @@ function App() {
     `}>
       <div className={css`
         @media (max-width: 1024px) {
-          display: none;
+          display: ${expansion === Expansion.Sidebar ? 'flex' : 'none'};
         }
       `}>
         <Sidebar />
       </div>
       <div className={css`
         @media (max-width: 1024px) {
-          display: ${isSidebarVisible ? 'flex' : 'none'};
+          display: ${expansion === Expansion.Contacts ? 'flex' : 'none'};
           position: absolute;
           top: 0;
           bottom: 0;
@@ -47,7 +53,7 @@ function App() {
           display: none;
         }
       `}>
-        <Icon size={48} src={bars} alt={t('expand')} onClick={() => setIsSidebarVisible(!isSidebarVisible)} />
+        <Icon size={48} src={bars} alt={t('expand')} onClick={() => setExpansion((expansion + 1) % 3)} />
       </div>
       <Messages />
       <div className={css`

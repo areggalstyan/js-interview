@@ -21,7 +21,7 @@ function MessageActions({ message }: { message: Message }) {
       type: 'conversations/requestEditMessage',
       payload: { id: message.id, name: message.name, text: newText }
     });
-  }
+  };
 
   return (
     <span className={css`

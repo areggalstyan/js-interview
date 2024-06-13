@@ -18,6 +18,7 @@ function NoConversationSelected() {
         display: flex;
         align-items: center;
         color: rgba(0, 0, 0, 0.4);
+        text-align: center;
       `}>
         {t('selectAConversation')}
       </span>

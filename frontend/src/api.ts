@@ -53,6 +53,6 @@ export const editMessage: (id: string, name: string, text: string) => Promise<vo
       }
     });
   } catch {
-    alert(i18n.t('editMessageError'))
+    alert(i18n.t('editMessageError'));
   }
 };

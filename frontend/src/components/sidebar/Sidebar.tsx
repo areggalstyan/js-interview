@@ -17,7 +17,7 @@ function Sidebar() {
     const newLng = localStorage.getItem('lng') === 'en' ? 'hy' : 'en';
     localStorage.setItem('lng', newLng);
     await i18n.changeLanguage(newLng);
-  }
+  };
 
   return (
     <div className={css`
