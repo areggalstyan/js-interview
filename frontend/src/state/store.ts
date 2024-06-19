@@ -1,19 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
-import conversationsReducer from './conversationsSlice';
-import currentConversationReducer from './currentConversationSlice';
-import searchReducer from './searchSlice';
+import { configureStore } from '@reduxjs/toolkit';
 import { watchAll, update } from './sagas';
+import chatReducer from './chatSlice';
 
 const sagaMiddleware = createSagaMiddleware();
-
 const store = configureStore({
   reducer: {
-    conversations: conversationsReducer,
-    currentConversation: currentConversationReducer,
-    search: searchReducer
+    chat: chatReducer
   },
-  middleware: getDefaultMiddleware => getDefaultMiddleware().concat([sagaMiddleware])
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(sagaMiddleware)
 });
 
 sagaMiddleware.run(watchAll);

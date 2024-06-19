@@ -1,58 +1,64 @@
-import axios from 'axios';
-import { Conversation, getCurrentName, toConversations } from './conversation';
+import axios, { AxiosRequestConfig } from 'axios';
+import Swal from 'sweetalert2';
+import i18n from './i18n/i18n';
+import { getCurrentName, messagesToConversations } from './user';
 import { v4 as uuidv4 } from 'uuid';
-import i18n from './i18n';
 
-export const getConversations: () => Promise<Conversation[]> = async () => {
+export type Message = {
+  dateAdded: number;
+  dateEdited: number;
+} & MessageEdit;
+
+export type MessageEdit = {
+  id: string;
+  name: string;
+  text: string;
+};
+
+export type Conversation = {
+  name: string;
+  messages: Message[];
+  lastMessage: Message;
+  minutesSinceLast: number;
+};
+
+const url = process.env.REACT_APP_API_URL!;
+const config: AxiosRequestConfig = {
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
+};
+
+export const fetchConversations = async (): Promise<Conversation[]> => {
   try {
-    return toConversations((await axios.get(`${process.env.REACT_APP_API_URL}/comments`, {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    })).data);
+    return messagesToConversations((await axios.get(`${url}/comments`, config)).data);
   } catch {
-    alert(i18n.t('getConversationsError'));
+    Swal.fire({
+      title: i18n.t('networkError'),
+      text: i18n.t('fetchConversationsError'),
+      icon: 'error'
+    });
     return [];
   }
 };
 
-export const addMessage: (text: string) => Promise<void> = async text => {
-  try {
-    return await axios.post(`${process.env.REACT_APP_API_URL}/comments`, {
+export const addMessage = async (text: string): Promise<void> => {
+  return await axios.post(
+    `${url}/comments`,
+    {
       name: getCurrentName(),
       text,
       id: uuidv4(),
       dateAdded: Date.now()
-    }, {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    });
-  } catch {
-    alert(i18n.t('addMessageError'));
-  }
+    },
+    config
+  );
 };
 
-export const removeMessage: (id: string) => Promise<void> = async id => {
-  try {
-    return await axios.delete(`${process.env.REACT_APP_API_URL}/comment/${id}`, {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    });
-  } catch {
-    alert(i18n.t('removeMessageError'));
-  }
+export const editMessage = async (data: MessageEdit): Promise<void> => {
+  return await axios.put(`${url}/comment/${data.id}`, data, config);
 };
 
-export const editMessage: (id: string, name: string, text: string) => Promise<void> = async (id, name, text) => {
-  try {
-    return await axios.put(`${process.env.REACT_APP_API_URL}/comment/${id}`, { id, name, text }, {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    });
-  } catch {
-    alert(i18n.t('editMessageError'));
-  }
+export const removeMessage = async (id: string): Promise<void> => {
+  return await axios.delete(`${url}/comment/${id}`, config);
 };
