@@ -2,8 +2,8 @@ import FlexContainer from '../../atoms/containers/FlexContainer';
 import Text from '../../atoms/Text';
 import OnlineStatus from './OnlineStatus';
 import Image from '../../atoms/Image';
-import profile from '../../../images/profile.svg';
 import { useAppSelector } from '../../../state/hooks';
+import { profile } from '../../../images/images';
 
 function UserInfo() {
   const name = useAppSelector(({ chat }) => chat.selectedConversation!.name);

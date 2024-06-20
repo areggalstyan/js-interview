@@ -1,8 +1,9 @@
 import { call, put, all, delay, takeEvery } from 'redux-saga/effects';
-import { addMessage, editMessage, fetchConversations, MessageEdit, removeMessage } from '../api';
+import { addMessage, editMessage, fetchConversations, removeMessage } from '../api/api';
 import { SagaIterator } from 'redux-saga';
 import { changeStatus, receiveUpdate } from './chatSlice';
 import { PayloadAction } from '@reduxjs/toolkit';
+import { MessageEdit } from '../api/models';
 
 const requestUpdateType = 'chat/requestUpdate';
 const requestAddMessageType = 'chat/requestAddMessage';

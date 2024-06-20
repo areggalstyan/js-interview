@@ -2,7 +2,8 @@ import { css } from '@emotion/css';
 import Text from '../../atoms/Text';
 import { useTranslation } from 'react-i18next';
 import Image from '../../atoms/Image';
-import call from '../../../images/conversation-view/call.svg';
+import { call } from '../../../images/images';
+import BreakpointContainer from '../../atoms/containers/BreakpointContainer';
 
 function CallButton() {
   const { t } = useTranslation();
@@ -20,10 +21,12 @@ function CallButton() {
         gap: 8px;
       `}
     >
-      <Image width="24px" height="24px" src={call}></Image>
-      <Text size={16} color="97, 94, 240">
-        {t('call')}
-      </Text>
+      <Image width="24px" height="24px" src={call} />
+      <BreakpointContainer type="max" width="425px">
+        <Text size={16} color="97, 94, 240">
+          {t('call')}
+        </Text>
+      </BreakpointContainer>
     </button>
   );
 }

@@ -2,7 +2,7 @@ import FlexContainer from '../../atoms/containers/FlexContainer';
 import Image from '../../atoms/Image';
 import { useTranslation } from 'react-i18next';
 import Text from '../../atoms/Text';
-import online from '../../../images/conversation-view/online.svg';
+import { online } from '../../../images/images';
 
 function OnlineStatus() {
   const { t } = useTranslation();

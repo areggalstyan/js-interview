@@ -2,15 +2,10 @@ import FlexContainer from '../../atoms/containers/FlexContainer';
 import Logo from '../atoms/Logo';
 import ImageButton from '../../atoms/ImageButton';
 import FlexPosition from '../../atoms/FlexPosition';
-import home from '../../../images/sidebar/home.svg';
-import messages from '../../../images/sidebar/messages.svg';
-import audio from '../../../images/sidebar/audio.svg';
-import search from '../../../images/sidebar/search.svg';
-import calendar from '../../../images/sidebar/calendar.svg';
-import settings from '../../../images/sidebar/settings.svg';
 import { useTranslation } from 'react-i18next';
 import { toggleLanguage } from '../../../i18n/i18n';
 import ScrollableContainer from '../../atoms/ScrollableContainer';
+import { audio, calendar, home, messages, search, settings } from '../../../images/images';
 
 function Sidebar() {
   const { t } = useTranslation();

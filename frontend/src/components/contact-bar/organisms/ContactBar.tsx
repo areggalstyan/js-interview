@@ -4,10 +4,9 @@ import TopBar from '../../molecules/TopBar';
 import ContactList from '../molecules/ContactList';
 import Image from '../../atoms/Image';
 import Badge from '../../atoms/Badge';
-import more from '../../../images/contact-bar/more.svg';
-import add from '../../../images/contact-bar/add.svg';
 import { useTranslation } from 'react-i18next';
 import { useAppSelector } from '../../../state/hooks';
+import { add, more } from '../../../images/images';
 
 function ContactBar() {
   const { t } = useTranslation();

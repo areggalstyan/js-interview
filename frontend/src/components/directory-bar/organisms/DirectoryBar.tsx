@@ -4,11 +4,8 @@ import { useTranslation } from 'react-i18next';
 import TopBar from '../../molecules/TopBar';
 import ScrollableContainer from '../../atoms/ScrollableContainer';
 import { CardProps } from '../../molecules/Card';
-import options from '../../../images/directory-bar/options.svg';
-import profile from '../../../images/profile.svg';
-import file from '../../../images/directory-bar/file.svg';
-import download from '../../../images/directory-bar/download.svg';
 import HorizontalLine from '../../atoms/HorizontalLine';
+import { download, file, options, profile } from '../../../images/images';
 
 function DirectoryBar() {
   const { t } = useTranslation();

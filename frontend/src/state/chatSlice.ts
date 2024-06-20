@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Conversation } from '../api';
 import { getCurrentName } from '../user';
+import { Conversation } from '../api/models';
 
 export type Status = 'idle' | 'processing' | 'success' | 'failure';
 

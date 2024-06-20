@@ -1,6 +1,6 @@
 import { MouseEventHandler } from 'react';
 import { css } from '@emotion/css';
-import { ImageProps } from './Image';
+import Image, { ImageProps } from './Image';
 
 export type ButtonProps = {
   width?: string;
@@ -12,11 +12,6 @@ function ImageButton({ width = 'auto', height = 'auto', src, alt = '', onClick }
   return (
     <button
       className={css`
-        width: ${width};
-        height: ${height};
-        display: flex;
-        justify-content: center;
-        align-items: center;
         background: none;
         border: none;
 
@@ -26,7 +21,7 @@ function ImageButton({ width = 'auto', height = 'auto', src, alt = '', onClick }
       `}
       onClick={onClick}
     >
-      <img src={src} alt={alt} />
+      <Image width={width} height={height} src={src} alt={alt} />
     </button>
   );
 }

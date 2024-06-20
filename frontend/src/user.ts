@@ -1,16 +1,14 @@
 import { adjectives, names, uniqueNamesGenerator } from 'unique-names-generator';
-import { Conversation, Message } from './api';
+import { Conversation, Message } from './api/models';
+import { lsGetOrCompute } from './localStorage';
 
-let currentName = localStorage.getItem('name');
-
-if (!currentName) {
-  currentName = uniqueNamesGenerator({
+let currentName = lsGetOrCompute('name', () =>
+  uniqueNamesGenerator({
     dictionaries: [adjectives, names]
-  });
-  localStorage.setItem('name', currentName);
-}
+  })
+);
 
-export const getCurrentName = (): string => currentName!;
+export const getCurrentName = (): string => currentName;
 export const getMinutesSinceMessage = ({ dateAdded }: Message) =>
   new Date(Date.now() - dateAdded).getMinutes();
 

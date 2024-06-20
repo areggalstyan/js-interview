@@ -1,11 +1,10 @@
 import FlexContainer from '../../atoms/containers/FlexContainer';
 import ImageButton from '../../atoms/ImageButton';
 import { useTranslation } from 'react-i18next';
-import edit from '../../../images/conversation-view/edit.svg';
-import remove from '../../../images/conversation-view/remove.svg';
 import { useAppDispatch } from '../../../state/hooks';
 import { requestEditMessage, requestRemoveMessage } from '../../../state/sagas';
 import Swal from 'sweetalert2';
+import { edit, remove } from '../../../images/images';
 
 function MessageActions({ id, name }: { id: string; name: string }) {
   const { t } = useTranslation();

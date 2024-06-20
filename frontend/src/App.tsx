@@ -1,32 +1,16 @@
 import DesktopApp from './components/DesktopApp';
-import { css } from '@emotion/css';
 import MobileApp from './components/MobileApp';
+import BreakpointContainer from './components/atoms/containers/BreakpointContainer';
 
 function App() {
   return (
     <>
-      <div
-        className={css`
-          display: block;
-
-          @media (max-width: 1280px) {
-            display: none;
-          }
-        `}
-      >
+      <BreakpointContainer type="max" width="1279px">
         <DesktopApp />
-      </div>
-      <div
-        className={css`
-          display: none;
-
-          @media (max-width: 1280px) {
-            display: block;
-          }
-        `}
-      >
+      </BreakpointContainer>
+      <BreakpointContainer type="min" width="1280px">
         <MobileApp />
-      </div>
+      </BreakpointContainer>
     </>
   );
 }

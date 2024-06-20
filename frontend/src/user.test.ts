@@ -1,6 +1,6 @@
 import { getCurrentName, getMinutesSinceMessage, messagesToConversations } from './user';
-import { Conversation, Message } from './api';
 import { v4 as uuidv4 } from 'uuid';
+import { Conversation, Message } from './api/models';
 
 beforeEach(() => {
   jest.useFakeTimers();
