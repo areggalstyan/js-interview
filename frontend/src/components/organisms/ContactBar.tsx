@@ -1,12 +1,12 @@
 import SearchBar from '../molecules/SearchBar';
-import FlexContainer from '../../atoms/containers/FlexContainer';
-import TopBar from '../../molecules/TopBar';
+import FlexContainer from '../atoms/containers/FlexContainer';
+import TopBar from '../molecules/TopBar';
 import ContactList from '../molecules/ContactList';
-import Image from '../../atoms/Image';
-import Badge from '../../atoms/Badge';
+import Image from '../atoms/Image';
+import Badge from '../atoms/Badge';
 import { useTranslation } from 'react-i18next';
-import { useAppSelector } from '../../../state/hooks';
-import { add, more } from '../../../images/images';
+import { useAppSelector } from '../../state/hooks';
+import { add, more } from '../../images/images';
 
 function ContactBar() {
   const { t } = useTranslation();

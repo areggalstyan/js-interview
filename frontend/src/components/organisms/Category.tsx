@@ -1,8 +1,8 @@
-import Card, { CardProps } from '../../molecules/Card';
-import FlexContainer from '../../atoms/containers/FlexContainer';
-import Text from '../../atoms/Text';
-import Badge from '../../atoms/Badge';
-import ImageButton from '../../atoms/ImageButton';
+import Card, { CardProps } from '../molecules/Card';
+import FlexContainer from '../atoms/containers/FlexContainer';
+import Text from '../atoms/Text';
+import Badge from '../atoms/Badge';
+import ImageButton from '../atoms/ImageButton';
 
 export type CategoryProps = {
   title: string;

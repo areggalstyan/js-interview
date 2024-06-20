@@ -1,8 +1,8 @@
-import TextInput from '../../atoms/TextInput';
-import BasicContainer from '../../atoms/containers/BasicContainer';
+import TextInput from '../atoms/TextInput';
+import BasicContainer from '../atoms/containers/BasicContainer';
 import { useTranslation } from 'react-i18next';
-import { useAppDispatch } from '../../../state/hooks';
-import { changeSearchText } from '../../../state/chatSlice';
+import { useAppDispatch } from '../../state/hooks';
+import { changeSearchText } from '../../state/chatSlice';
 
 function SearchBar() {
   const { t } = useTranslation();

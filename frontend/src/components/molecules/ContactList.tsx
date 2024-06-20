@@ -1,11 +1,11 @@
-import FlexContainer from '../../atoms/containers/FlexContainer';
-import Card from '../../molecules/Card';
-import ScrollableContainer from '../../atoms/ScrollableContainer';
-import { useAppDispatch, useAppSelector } from '../../../state/hooks';
+import FlexContainer from '../atoms/containers/FlexContainer';
+import Card from './Card';
+import ScrollableContainer from '../atoms/ScrollableContainer';
+import { useAppDispatch, useAppSelector } from '../../state/hooks';
 import { useTranslation } from 'react-i18next';
-import { selectConversation } from '../../../state/chatSlice';
-import ClickableContainer from '../../atoms/ClickableContainer';
-import { profile } from '../../../images/images';
+import { selectConversation } from '../../state/chatSlice';
+import ClickableContainer from '../atoms/ClickableContainer';
+import { profile } from '../../images/images';
 
 function ContactList() {
   const { t } = useTranslation();

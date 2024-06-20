@@ -1,10 +1,10 @@
-import FlexContainer from '../../atoms/containers/FlexContainer';
-import ScrollableContainer from '../../atoms/ScrollableContainer';
-import PositionContainer from '../../atoms/containers/PositionContainer';
-import GrowingContainer from '../../atoms/containers/GrowingContainer';
-import { useAppSelector } from '../../../state/hooks';
+import FlexContainer from '../atoms/containers/FlexContainer';
+import ScrollableContainer from '../atoms/ScrollableContainer';
+import PositionContainer from '../atoms/containers/PositionContainer';
+import GrowingContainer from '../atoms/containers/GrowingContainer';
+import { useAppSelector } from '../../state/hooks';
 import MessageView from '../organisms/MessageView';
-import { getCurrentName } from '../../../user';
+import { getCurrentName } from '../../user';
 
 function MessageList() {
   const messages = useAppSelector(({ chat }) => chat.selectedConversation!.messages);

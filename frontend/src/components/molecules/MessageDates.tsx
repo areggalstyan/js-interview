@@ -1,4 +1,4 @@
-import Text from '../../atoms/Text';
+import Text from '../atoms/Text';
 import { useTranslation } from 'react-i18next';
 
 export type MessageDatesProps = {

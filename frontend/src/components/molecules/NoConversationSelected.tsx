@@ -1,6 +1,6 @@
-import FlexContainer from '../../atoms/containers/FlexContainer';
+import FlexContainer from '../atoms/containers/FlexContainer';
 import { useTranslation } from 'react-i18next';
-import Text from '../../atoms/Text';
+import Text from '../atoms/Text';
 
 function NoConversationSelected() {
   const { t } = useTranslation();

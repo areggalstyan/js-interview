@@ -1,9 +1,9 @@
 import { css } from '@emotion/css';
-import Text from '../../atoms/Text';
+import Text from '../atoms/Text';
 import { useTranslation } from 'react-i18next';
-import Image from '../../atoms/Image';
-import { call } from '../../../images/images';
-import BreakpointContainer from '../../atoms/containers/BreakpointContainer';
+import Image from '../atoms/Image';
+import { call } from '../../images/images';
+import BreakpointContainer from '../atoms/containers/BreakpointContainer';
 
 function CallButton() {
   const { t } = useTranslation();

@@ -1,12 +1,12 @@
-import FlexContainer from '../../atoms/containers/FlexContainer';
+import FlexContainer from '../atoms/containers/FlexContainer';
 import MessageBody from './MessageBody';
-import FlexPosition from '../../atoms/FlexPosition';
-import { getCurrentName } from '../../../user';
-import Image from '../../atoms/Image';
-import BasicContainer from '../../atoms/containers/BasicContainer';
-import NoShrinkContainer from '../../atoms/containers/NoShrinkContainer';
-import { Message } from '../../../api/models';
-import { profile } from '../../../images/images';
+import FlexPosition from '../atoms/FlexPosition';
+import { getCurrentName } from '../../user';
+import Image from '../atoms/Image';
+import BasicContainer from '../atoms/containers/BasicContainer';
+import NoShrinkContainer from '../atoms/containers/NoShrinkContainer';
+import { Message } from '../../api/models';
+import { profile } from '../../images/images';
 
 export type MessageViewProps = { displayProfile: boolean } & Message;
 

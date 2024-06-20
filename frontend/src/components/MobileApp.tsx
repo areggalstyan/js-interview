@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import ContactBar from './contact-bar/organisms/ContactBar';
+import ContactBar from './organisms/ContactBar';
 import PositionContainer from './atoms/containers/PositionContainer';
 import FlexContainer from './atoms/containers/FlexContainer';
 import ImageButton from './atoms/ImageButton';
-import Sidebar from './sidebar/organisms/Sidebar';
-import ConversationView from './conversation-view/organisms/ConversationView';
-import DirectoryBar from './directory-bar/organisms/DirectoryBar';
+import Sidebar from './organisms/Sidebar';
+import ConversationView from './organisms/ConversationView';
+import DirectoryBar from './organisms/DirectoryBar';
 import { css } from '@emotion/css';
 import { contactBar, conversationView, directoryBar, sidebar } from '../images/images';
 

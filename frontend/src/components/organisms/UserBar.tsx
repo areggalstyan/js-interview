@@ -1,5 +1,5 @@
-import FlexContainer from '../../atoms/containers/FlexContainer';
-import FlexPosition from '../../atoms/FlexPosition';
+import FlexContainer from '../atoms/containers/FlexContainer';
+import FlexPosition from '../atoms/FlexPosition';
 import CallButton from '../molecules/CallButton';
 import UserInfo from '../molecules/UserInfo';
 

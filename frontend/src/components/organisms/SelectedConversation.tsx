@@ -1,4 +1,4 @@
-import FlexContainer from '../../atoms/containers/FlexContainer';
+import FlexContainer from '../atoms/containers/FlexContainer';
 import MessageBar from '../molecules/MessageBar';
 import MessageList from '../molecules/MessageList';
 import UserBar from './UserBar';

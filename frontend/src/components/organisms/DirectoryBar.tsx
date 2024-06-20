@@ -1,11 +1,11 @@
-import FlexContainer from '../../atoms/containers/FlexContainer';
+import FlexContainer from '../atoms/containers/FlexContainer';
 import Category from './Category';
 import { useTranslation } from 'react-i18next';
-import TopBar from '../../molecules/TopBar';
-import ScrollableContainer from '../../atoms/ScrollableContainer';
-import { CardProps } from '../../molecules/Card';
-import HorizontalLine from '../../atoms/HorizontalLine';
-import { download, file, options, profile } from '../../../images/images';
+import TopBar from '../molecules/TopBar';
+import ScrollableContainer from '../atoms/ScrollableContainer';
+import { CardProps } from '../molecules/Card';
+import HorizontalLine from '../atoms/HorizontalLine';
+import { download, file, options, profile } from '../../images/images';
 
 function DirectoryBar() {
   const { t } = useTranslation();

@@ -1,6 +1,6 @@
-import FlexContainer from '../../atoms/containers/FlexContainer';
+import FlexContainer from '../atoms/containers/FlexContainer';
 import SelectedConversation from './SelectedConversation';
-import { useAppSelector } from '../../../state/hooks';
+import { useAppSelector } from '../../state/hooks';
 import NoConversationSelected from '../molecules/NoConversationSelected';
 
 function ConversationView() {

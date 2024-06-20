@@ -1,15 +1,15 @@
-import FlexContainer from '../../atoms/containers/FlexContainer';
-import ImageButton from '../../atoms/ImageButton';
+import FlexContainer from '../atoms/containers/FlexContainer';
+import ImageButton from '../atoms/ImageButton';
 import { useTranslation } from 'react-i18next';
-import TextInput from '../../atoms/TextInput';
-import GrowingContainer from '../../atoms/containers/GrowingContainer';
-import PositionContainer from '../../atoms/containers/PositionContainer';
+import TextInput from '../atoms/TextInput';
+import GrowingContainer from '../atoms/containers/GrowingContainer';
+import PositionContainer from '../atoms/containers/PositionContainer';
 import { useState } from 'react';
-import { useAppDispatch } from '../../../state/hooks';
-import { requestAddMessage } from '../../../state/sagas';
+import { useAppDispatch } from '../../state/hooks';
+import { requestAddMessage } from '../../state/sagas';
 import Swal from 'sweetalert2';
-import i18n from '../../../i18n/i18n';
-import { attach, send } from '../../../images/images';
+import i18n from '../../i18n/i18n';
+import { attach, send } from '../../images/images';
 
 function MessageBar() {
   const { t } = useTranslation();

@@ -1,8 +1,8 @@
 import { css } from '@emotion/css';
-import Sidebar from './sidebar/organisms/Sidebar';
-import ContactBar from './contact-bar/organisms/ContactBar';
-import ConversationView from './conversation-view/organisms/ConversationView';
-import DirectoryBar from './directory-bar/organisms/DirectoryBar';
+import Sidebar from './organisms/Sidebar';
+import ContactBar from './organisms/ContactBar';
+import ConversationView from './organisms/ConversationView';
+import DirectoryBar from './organisms/DirectoryBar';
 
 function DesktopApp() {
   return (

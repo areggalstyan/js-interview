@@ -1,10 +1,10 @@
 import { css } from '@emotion/css';
-import { getCurrentName } from '../../../user';
-import FlexPosition from '../../atoms/FlexPosition';
+import { getCurrentName } from '../../user';
+import FlexPosition from '../atoms/FlexPosition';
 import MessageActions from '../molecules/MessageActions';
-import FlexContainer from '../../atoms/containers/FlexContainer';
+import FlexContainer from '../atoms/containers/FlexContainer';
 import MessageDates from '../molecules/MessageDates';
-import { Message } from '../../../api/models';
+import { Message } from '../../api/models';
 
 function MessageBody({ name, text, id, dateAdded, dateEdited }: Message) {
   const isMine = name === getCurrentName();
